@@ -7,7 +7,7 @@ import {
 
 export default function HowItWorks() {
   return (
-    <section className="relative w-full py-32 bg-black text-white -mt-35">
+    <section className="relative w-full py-32 bg-black text-white -mt-30">
       
       <h2 className="text-center text-5xl md:text-6xl font-light tracking-widest mb-24">
         HOW IT <span className="text-[#d6c29f]">WORKS</span>
