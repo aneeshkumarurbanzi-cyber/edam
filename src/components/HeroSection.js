@@ -25,101 +25,136 @@ export default function HeroSection() {
       </motion.div>
 
       {/* Content */}
-      <div className="relative z-10 max-w-7xl mx-auto px-6 pt-40 flex flex-col md:flex-row justify-between items-end min-h-screen pb-20 gap-10">
+      <div className="relative z-10 max-w-7xl mx-auto px-6 pt-28 md:pt-40 flex flex-col md:flex-row md:justify-between md:items-end min-h-screen pb-12 md:pb-20 gap-6 md:gap-10">
 
         {/* Left — BIG quote */}
         <motion.div
           initial={{ opacity: 0, x: -60 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ delay: 0.3, duration: 1, ease: "easeOut" }}
-          className="w-full md:w-[720px] shrink-0"
+          className="w-full md:w-[860px] shrink-0 flex flex-col items-center md:items-start mt-auto md:mt-0"
         >
-          <svg
-            width="100%"
-            viewBox="0 0 780 460"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            {/* Left vertical bar */}
-            <rect x="20" y="30" width="5" height="360" rx="2.5" fill="#d6c39a" />
 
-            {/* Top decorative line */}
-            <line x1="44" y1="44" x2="260" y2="44" stroke="#d6c39a" strokeWidth="1.2" opacity="0.4" />
+          {/* Mobile quote */}
+          <div className="block md:hidden text-center">
+            <p className="text-[10px] font-semibold tracking-[0.25em] text-[#d6c39a]/70 uppercase mb-4">
+              EDAM
+            </p>
+            <div className="border-l-2 border-[#d6c39a] pl-4 inline-block text-left">
+              <h1 className="text-[36px] font-light leading-tight text-white" style={{ fontFamily: "Georgia, serif" }}>
+                Transforming spaces,{" "}
+                <span className="text-[#d6c39a]">elevating lives.</span>
+              </h1>
+            </div>
+          </div>
 
-            {/* Bottom decorative line */}
-            <line x1="44" y1="390" x2="260" y2="390" stroke="#d6c39a" strokeWidth="1.2" opacity="0.4" />
+          {/* Desktop quote — big plain text, no SVG sizing issues */}
+          <div className="hidden md:flex flex-col gap-0">
 
-            {/* Large opening quote mark */}
-            <text
-              x="34" y="170"
-              fontFamily="Georgia, serif"
-              fontSize="160"
-              fill="#d6c39a"
-              opacity="0.10"
-              fontWeight="700"
-            >
-              &ldquo;
-            </text>
+            {/* EDAM label */}
+            <div className="flex items-center gap-4 mb-6">
+              <div className="h-px w-16 bg-[#d6c39a] opacity-50" />
+              <p className="text-[11px] font-semibold tracking-[0.3em] text-[#d6c39a]/70 uppercase">
+                
+              </p>
+            </div>
 
-            {/* Line 1 */}
-            <text
-              x="44" y="160"
-              fontFamily="Georgia, serif"
-              fontSize="82"
-              fontWeight="400"
-              fill="white"
-              letterSpacing="-2"
-            >
-              Transforming spaces,
-            </text>
+            {/* Left bar + quote */}
+            <div className="flex gap-6 items-stretch">
+              {/* Vertical bar */}
+              <div className="w-1 bg-[#d6c39a] rounded-full shrink-0" />
 
-           
+              {/* Text */}
+              <div className="flex flex-col gap-2">
+                {/* Ghost quote mark */}
+                <span
+                  className="text-[#d6c39a] leading-none select-none"
+                  style={{
+                    fontFamily: "Georgia, serif",
+                    fontSize: "clamp(80px, 10vw, 140px)",
+                    opacity: 0.1,
+                    lineHeight: 0.8,
+                    marginBottom: "-20px",
+                  }}
+                >
+                  &ldquo;
+                </span>
 
-            {/* Line 3 — accent */}
-            <text
-              x="44" y="270"
-              fontFamily="Georgia, serif"
-              fontSize="82"
-              fontWeight="400"
-              fill="#d6c39a"
-              letterSpacing="-2"
-            >
-              elevating lives.
-            </text>
+                <h1
+                  className="font-light text-white leading-none"
+                  style={{
+                    fontFamily: "Georgia, serif",
+                    fontSize: "clamp(45px, 6vw, 90px)",
+                    letterSpacing: "-2px",
+                  }}
+                >
+                  Transforming spaces,
+                </h1>
 
-            {/* Closing quote mark */}
-            <text
-              x="760" y="400"
-              fontFamily="Georgia, serif"
-              fontSize="160"
-              fill="#d6c39a"
-              opacity="0.10"
-              fontWeight="700"
-              textAnchor="end"
-            >
-              &rdquo;
-            </text>
+                <h1
+                  className="font-light leading-none"
+                  style={{
+                    fontFamily: "Georgia, serif",
+                    fontSize: "clamp(52px, 7vw, 110px)",
+                    letterSpacing: "-2px",
+                    color: "#d6c39a",
+                  }}
+                >
+                  elevating lives.
+                </h1>
 
-            {/* Right decorative dots */}
-            <circle cx="748" cy="180" r="3.5" fill="#d6c39a" opacity="0.3" />
-            <circle cx="748" cy="210" r="6" fill="#d6c39a" opacity="0.5" />
-            <circle cx="748" cy="240" r="3.5" fill="#d6c39a" opacity="0.3" />
+                {/* Bottom line */}
+                <div className="mt-6 flex items-center gap-4">
+                  <div className="h-px w-16 bg-[#d6c39a] opacity-50" />
+                  <span
+                    className="text-[20px] tracking-[0.3em] text-[#d6c39a] opacity-60 uppercase"
+                    style={{ fontFamily: "sans-serif" }}
+                  >
+                   EDAM
+                  </span>
+                </div>
+              </div>
+            </div>
 
-            {/* Bottom attribution */}
-            <line x1="44" y1="345" x2="130" y2="345" stroke="#d6c39a" strokeWidth="1.5" />
-            <text
-              x="142" y="350"
-              fontFamily="sans-serif"
-              fontSize="12"
-              fill="#d6c39a"
-              opacity="0.7"
-              letterSpacing="3"
-            >
-          EDAM
-            </text>
-          </svg>
+            {/* Decorative dots */}
+            <div className="flex gap-2 mt-6 ml-7">
+              <div className="w-2 h-2 rounded-full bg-[#d6c39a] opacity-30" />
+              <div className="w-3 h-3 rounded-full bg-[#d6c39a] opacity-50" />
+              <div className="w-2 h-2 rounded-full bg-[#d6c39a] opacity-30" />
+            </div>
+          </div>
+
         </motion.div>
 
-       
+        {/* Right — sentence */}
+        <motion.div
+          initial={{ opacity: 0, x: 60 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ delay: 0.6, duration: 0.9, ease: "easeOut" }}
+          className="text-left md:text-right max-w-full md:max-w-xs flex flex-col gap-4 md:mb-6"
+        >
+          <div className="flex md:justify-end">
+            <div className="h-px w-16 bg-[#d6c39a] opacity-50" />
+          </div>
+
+          <p className="text-white/70 text-[13px] md:text-[14px] leading-relaxed tracking-wide">
+            We craft photorealistic architectural visualizations that bring your
+            vision to life — before a single wall is built.
+          </p>
+
+          <div className="flex md:justify-end">
+            <div className="h-px w-28 bg-[#d6c39a] opacity-25" />
+          </div>
+
+          <motion.button
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.9, duration: 0.6 }}
+            className="self-start md:self-end border border-[#d6c39a]/50 hover:border-[#d6c39a] text-[#d6c39a] text-[11px] font-semibold tracking-[0.2em] uppercase px-6 py-3 rounded-lg transition-colors duration-200"
+          >
+            View Our Work
+          </motion.button>
+        </motion.div>
 
       </div>
     </section>
