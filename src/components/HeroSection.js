@@ -38,7 +38,7 @@ export default function HeroSection() {
           {/* Mobile quote */}
           <div className="block md:hidden text-center">
             <p className="text-[10px] font-semibold tracking-[0.25em] text-[#d6c39a]/70 uppercase mb-4">
-              EDAM
+              
             </p>
             <div className="border-l-2 border-[#d6c39a] pl-4 inline-block text-left">
               <h1 className="text-[36px] font-light leading-tight text-white" style={{ fontFamily: "Georgia, serif" }}>

@@ -80,7 +80,7 @@ export default function WhoAreWe() {
               transition={{ duration: 0.8, ease: "easeOut" }}
               className="relative w-[260px] h-[380px] md:-mt-32 rounded-[32px] overflow-hidden"
             >
-              <Image src="/who-1.jpg" alt="" fill className="object-cover" />
+              <Image src="/who1.jpg" alt="" fill className="object-cover" />
             </motion.div>
 
             {/* WHO + IMAGE */}
@@ -94,7 +94,7 @@ export default function WhoAreWe() {
                 transition={{ duration: 0.8, ease: "easeOut", delay: 0.1 }}
                 className="relative w-[260px] h-[380px] rounded-[32px] overflow-hidden"
               >
-                <Image src="/who-2.jpg" alt="" fill className="object-cover" />
+                <Image src="/who2.jpg" alt="" fill className="object-cover" />
               </motion.div>
             </div>
 
@@ -108,7 +108,7 @@ export default function WhoAreWe() {
                 transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
                 className="relative w-[260px] h-[380px] rounded-[32px] overflow-hidden"
               >
-                <Image src="/who-3.jpg" alt="" fill className="object-cover" />
+                <Image src="/who3.jpg" alt="" fill className="object-cover" />
               </motion.div>
               <span className="mt-10 text-[96px] font-light tracking-widest text-white/80">WE</span>
             </div>
@@ -124,7 +124,7 @@ export default function WhoAreWe() {
                 transition={{ duration: 0.8, ease: "easeOut", delay: 0.3 }}
                 className="relative w-[260px] h-[380px] rounded-[32px] overflow-hidden"
               >
-                <Image src="/who-4.jpg" alt="" fill className="object-cover" />
+                <Image src="/who4.jpg" alt="" fill className="object-cover" />
               </motion.div>
             </div>
           </div>
