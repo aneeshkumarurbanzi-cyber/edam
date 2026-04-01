@@ -110,7 +110,7 @@ export default function HeroSection() {
                     className="text-[20px] tracking-[0.3em] text-[#d6c39a] opacity-60 uppercase"
                     style={{ fontFamily: "sans-serif" }}
                   >
-                   EDAM
+                   
                   </span>
                 </div>
               </div>
