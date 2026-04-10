@@ -23,20 +23,14 @@ export default function IntroSection() {
           </p>
 
           
-          <div className="flex gap-6">
-            <Link
-              href="/projects"
-              className="px-10 py-4 bg-[#4aa6a3] text-black font-medium tracking-wide hover:opacity-90 transition"
-            >
-              VIEW PROJECTS
-            </Link>
+          <div className="mt-10 flex gap-6">
+            <button className="self-start md:self-end border-2 border-[#d6c39a]/50 bg-[#d6c39a] hover:bg-[#d7c190] text-[#000000] text-[11px] font-semibold tracking-[0.2em] uppercase px-6 py-3 rounded-lg transition-colors duration-200">
+              View Projects
+            </button>
 
-            <Link
-              href="/about"
-              className="px-10 py-4 bg-black text-white font-medium tracking-wide hover:opacity-90 transition"
-            >
-              ABOUT US
-            </Link>
+            <button className="self-start md:self-end border-2 border-[#d6c39a]/50 hover:border-[#d6c39a] text-[#0c0c0c] text-[11px] font-semibold tracking-[0.2em] uppercase px-6 py-3 rounded-lg transition-colors duration-200">
+              About Us
+            </button>
           </div>
 
         </div>

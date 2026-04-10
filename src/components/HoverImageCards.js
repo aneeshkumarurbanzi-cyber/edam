@@ -77,7 +77,7 @@ export default function HoverImageCards() {
 
                 <div className="absolute inset-0 bg-black/30" />
 
-                <div className="absolute bottom-6 left-6 right-6 bg-[#c4936d] text-white p-6 rounded-xl">
+                <div className="absolute bottom-6 left-6 right-6 bg-[#d6c39a] text-white p-6 rounded-xl">
                   <h3 className="text-lg font-semibold">
                     {card.title}
                   </h3>

@@ -4,8 +4,8 @@ import WhoAreWe from "@/components/WhoAreWe";
 import HowItWorks from "@/components/HowItWorks";
 import OurProjects from "@/components/OurProjects";
 import Services from "@/components/Services";
-import HomeFAQ from "@/components/HomeFAQ";
 import InspiringProjects from "@/components/InspiringProjects";
+import HomeFAQ from "@/components/HomeFAQ";
 export default function Home() {
   return (
     <>

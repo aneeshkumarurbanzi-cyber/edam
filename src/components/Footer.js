@@ -70,7 +70,7 @@ export default function Footer() {
 
      
       <div className="border-t border-white/10 mt-16 pt-6 text-center text-xs text-white/40">
-        © {new Date().getFullYear()} ATMO Studio. All rights reserved.
+        © {new Date().getFullYear()} Urbanzi Solutions. All rights reserved.
       </div>
     </footer>
   );

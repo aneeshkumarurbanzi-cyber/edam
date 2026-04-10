@@ -38,7 +38,7 @@ export default function OurProjects() {
 
   return (
     <section
-      className="bg-black py-20 md:py-32 text-white relative overflow-hidden"
+      className="bg-black py-20 md:py-32 text-white relative overflow-hidden -mt-25"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >

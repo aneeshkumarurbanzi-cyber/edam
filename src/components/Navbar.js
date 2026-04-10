@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { FaWhatsapp } from "react-icons/fa";
+import { FaWhatsapp, FaFacebookF, FaInstagram } from "react-icons/fa";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 
 export default function Navbar() {
@@ -14,33 +14,49 @@ export default function Navbar() {
         <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
 
           {/* Logo */}
-          <div
-        onClick={() => scrollToSection("home")}
-        className="flex items-center gap-2 cursor-pointer"
-      >
-        <div className="w-10 h-5 bg-amber-100 skew-x-[-20deg]" />
-        <h1 className="text-white text-2xl font-bold">EDAM</h1>
-      </div>
+          <div className="flex items-center gap-2 cursor-pointer">
+            <h1 className="text-white text-2xl font-bold">EDAM</h1>
+          </div>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex gap-10 text-sm text-gray-300">
             <Link href="/" className="hover:text-white transition">Home</Link>
             <Link href="/about" className="hover:text-white transition">About</Link>
             <Link href="/services" className="hover:text-white transition">Services</Link>
-            <Link href="/projects" className="hover:text-white transition">Projects</Link>
-            <Link href="/blog" className="hover:text-white transition">Blog</Link>
+            <Link href="/#" className="hover:text-white transition">Projects</Link>
+            <Link href="/#" className="hover:text-white transition">Blog</Link>
             <Link href="/contact" className="hover:text-white transition">Contact</Link>
           </nav>
 
-          {/* Right Side (WhatsApp + Mobile Menu Button) */}
-          <div className="flex items-center gap-4">
+          {/* Right Side */}
+          <div className="flex items-center gap-3">
 
-            {/* WhatsApp Button */}
+            {/* Facebook */}
+            <a
+              href="https://facebook.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-center bg-white/10 hover:bg-blue-600 text-white p-3 rounded-full transition-all duration-300"
+            >
+              <FaFacebookF size={16} />
+            </a>
+
+            {/* Instagram */}
+            <a
+              href="https://instagram.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-center bg-white/10 hover:bg-pink-500 text-white p-3 rounded-full transition-all duration-300"
+            >
+              <FaInstagram size={16} />
+            </a>
+
+            {/* WhatsApp */}
             <a
               href="https://wa.me/919999999999"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center justify-center bg-[#25D366] text-white p-3 rounded-full"
+              className="flex items-center justify-center bg-white/10 hover:bg-[#1ebe5d] text-white p-3 rounded-full transition-all duration-300"
             >
               <FaWhatsapp size={18} />
             </a>
@@ -60,14 +76,14 @@ export default function Navbar() {
           </div>
         </div>
 
-        {/* Mobile Dropdown Menu */}
+        {/* Mobile Menu */}
         {isOpen && (
           <div className="md:hidden bg-black/95 backdrop-blur-md px-6 pb-6 pt-4 space-y-4 text-gray-300 text-sm">
             <Link href="/" onClick={() => setIsOpen(false)} className="block hover:text-white">Home</Link>
             <Link href="/about" onClick={() => setIsOpen(false)} className="block hover:text-white">About</Link>
             <Link href="/services" onClick={() => setIsOpen(false)} className="block hover:text-white">Services</Link>
-            <Link href="/projects" onClick={() => setIsOpen(false)} className="block hover:text-white">Projects</Link>
-            <Link href="/blog" onClick={() => setIsOpen(false)} className="block hover:text-white">Blog</Link>
+            <Link href="/#" onClick={() => setIsOpen(false)} className="block hover:text-white">Projects</Link>
+            <Link href="/#" onClick={() => setIsOpen(false)} className="block hover:text-white">Blog</Link>
             <Link href="/contact" onClick={() => setIsOpen(false)} className="block hover:text-white">Contact</Link>
           </div>
         )}

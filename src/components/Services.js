@@ -1,3 +1,5 @@
+"use client";
+
 import {
   PlayCircleIcon,
   CubeIcon,
@@ -7,28 +9,38 @@ import {
   ArrowUpRightIcon,
 } from "@heroicons/react/24/outline";
 
+import { motion } from "framer-motion";
+
 export default function Services() {
   return (
     <section className="bg-black py-20 md:py-32 text-white -mt-20">
       <div className="max-w-7xl mx-auto px-6">
 
-        {/* TITLE ABOVE GRID */}
-        <div className="mb-16">
+        {/* TITLE */}
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+          className="mb-16"
+        >
           <h2 className="text-4xl md:text-6xl font-light tracking-widest text-[#d6c29f]">
             SERVICES
           </h2>
-        </div>
+        </motion.div>
 
         {/* MAIN GRID */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-7">
 
-          {/* SERVICES GRID */}
-          <div className="lg:col-span-8 grid grid-cols-1 sm:grid-cols-2 gap-8">
+          {/* LEFT GRID */}
+          <div className="lg:col-span-8 grid grid-cols-1 sm:grid-cols-2 gap-6 md:gap-6">
+
             <ServiceCard
               icon={<PlayCircleIcon />}
               title="Interior Visualization"
               desc="Showcase lighting, textures, and atmosphere of spaces before construction begins."
               light
+              delay={0}
             />
 
             <ServiceCard
@@ -36,6 +48,7 @@ export default function Services() {
               title="3D Modeling & Post-Production"
               desc="From accurate models to polished final renders."
               gold
+              delay={0.1}
             />
 
             <ServiceCard
@@ -43,6 +56,7 @@ export default function Services() {
               title="3D Animation & Walkthroughs"
               desc="Step inside the project with cinematic presentations."
               gold
+              delay={0.2}
             />
 
             <ServiceCard
@@ -50,11 +64,19 @@ export default function Services() {
               title="Exterior Visualization"
               desc="Bring facades, landscapes, and master plans to life with photorealistic renders."
               light
+              delay={0.3}
             />
+
           </div>
 
-          {/* RIGHT COLUMN */}
-          <div className="lg:col-span-4 flex flex-col justify-between">
+          {/* RIGHT SIDE */}
+          <motion.div
+            initial={{ opacity: 0, x: 60 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="lg:col-span-4 flex flex-col justify-between"
+          >
 
             <div className="text-sm uppercase tracking-wider leading-loose text-white/70">
               Explore our <span className="text-white">selected projects</span><br />
@@ -62,10 +84,8 @@ export default function Services() {
               into vivid <span className="text-white">3D realities</span>.
             </div>
 
-            <div className="relative bg-white text-black rounded-[32px] p-8
-                  border border-black/10
-                  min-h-[260px]
-                  flex flex-col justify-between mt-10">
+            {/* ✅ FIXED CARD */}
+            <div className="relative bg-white text-black rounded-[32px] p-8 border border-black/10 min-h-[240px] md:min-h-[260px] flex flex-col justify-between mt-10 transition hover:-translate-y-2">
 
               <div>
                 <ViewfinderCircleIcon className="w-8 h-8 mb-5" />
@@ -79,14 +99,14 @@ export default function Services() {
                 </p>
               </div>
 
-              <div className="absolute top-6 right-6 w-10 h-10 rounded-full
-                    border border-black/20
-                    flex items-center justify-center">
+              {/* ✅ FIXED ICON */}
+              <div className="absolute top-6 right-6 w-10 h-10 rounded-full border border-black/20 flex items-center justify-center">
                 <ArrowUpRightIcon className="w-5 h-5 text-black/70" />
               </div>
 
             </div>
-          </div>
+
+          </motion.div>
 
         </div>
       </div>
@@ -94,19 +114,28 @@ export default function Services() {
   );
 }
 
-function ServiceCard({ icon, title, desc, light, gold }) {
-  return (
-    <div
-      className={`relative rounded-[32px] p-8 min-h-[260px]
-        ${light ? "bg-white text-black" : ""}
-        ${gold ? "bg-[#d6c29f] text-black" : ""}`}
-    >
-      <div className="w-8 h-8 mb-6">{icon}</div>
 
-      <h3 className="font-semibold text-lg">{title}</h3>
-      <p className="text-sm mt-3 opacity-80 leading-relaxed">{desc}</p>
+function ServiceCard({ icon, title, desc, light, gold, delay }) {
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 60 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.7, delay }}
+      viewport={{ once: true }}
+      className={`relative rounded-[32px] p-6 md:p-8 min-h-[220px] md:min-h-[260px] flex flex-col justify-between transition-all duration-300 hover:-translate-y-3 hover:scale-[1.02] ${
+        light ? "bg-white text-black" : ""
+      } ${gold ? "bg-[#d6c29f] text-black" : ""}`}
+    >
+      <div>
+        <div className="w-8 h-8 mb-6">{icon}</div>
+
+        <h3 className="font-semibold text-lg">{title}</h3>
+        <p className="text-sm mt-3 opacity-80 leading-relaxed">
+          {desc}
+        </p>
+      </div>
 
       <ArrowUpRightIcon className="w-6 h-6 absolute top-6 right-6 opacity-70" />
-    </div>
+    </motion.div>
   );
 }
