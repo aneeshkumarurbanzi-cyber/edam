@@ -46,7 +46,7 @@ export default function ContactCTA() {
 
               {/* Heading */}
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-light leading-tight mb-8">
-                Ready to work <br /> together?
+                Ready to work <br /> with us?
               </h2>
 
               {/* CTA */}

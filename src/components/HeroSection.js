@@ -10,15 +10,12 @@ import {
 import { useEffect } from "react";
 
 export default function HeroSection() {
-  // 🔥 Mouse tracking
   const x = useMotionValue(0);
   const y = useMotionValue(0);
 
-  // ⚡ Increase movement range (FASTER)
   const rawX = useTransform(x, [-500, 500], [60, -60]);
   const rawY = useTransform(y, [-500, 500], [60, -60]);
 
-  // 💎 Smooth spring (IMPORTANT for smoothness)
   const moveX = useSpring(rawX, {
     stiffness: 80,
     damping: 20,
@@ -44,7 +41,7 @@ export default function HeroSection() {
   return (
     <section className="relative min-h-screen w-full overflow-hidden">
 
-      {/* ✅ ONLY IMAGE UPDATED */}
+      {/* IMAGE */}
       <motion.div
         style={{ x: moveX, y: moveY }}
         initial={{ scale: 1.1, opacity: 0 }}
@@ -62,21 +59,21 @@ export default function HeroSection() {
         <div className="absolute inset-0 bg-black/50" />
       </motion.div>
 
-      {/* 🔽 EVERYTHING BELOW UNCHANGED */}
-      <div className="relative z-10 max-w-7xl mx-auto px-6 pt-28 md:pt-40 flex flex-col md:flex-row md:justify-between md:items-end min-h-screen pb-12 md:pb-20 gap-6 md:gap-10">
+      {/* CONTENT */}
+      <div className="relative z-10 max-w-7xl mx-auto px-6 pt-28 md:pt-40 flex flex-col justify-center md:flex-row md:justify-between md:items-end min-h-screen pb-12 md:pb-20 gap-6 md:gap-10">
 
         {/* LEFT */}
         <motion.div
           initial={{ opacity: 0, x: -60 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ delay: 0.3, duration: 1, ease: "easeOut" }}
-          className="w-full md:w-[860px] shrink-0 flex flex-col items-center md:items-start mt-auto md:mt-0"
+          className="w-full md:w-[860px] shrink-0 flex flex-col items-center md:items-start mt-0"
         >
 
           <div className="block md:hidden text-center">
             <div className="border-l-2 border-[#d6c39a] pl-4 inline-block text-left">
               <h1 className="text-[36px] font-light leading-tight text-white" style={{ fontFamily: "Georgia, serif" }}>
-                Transforming spaces,{" "}
+                Transforming spaces{" "}
                 <span className="text-[#d6c39a]">elevating lives.</span>
               </h1>
             </div>
