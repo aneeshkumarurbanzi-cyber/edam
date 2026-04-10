@@ -9,17 +9,18 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <header className="fixed top-0 left-0 w-full z-50">
+    <header className="fixed top-0 left-0 w-full z-50 overflow-x-hidden">
       <div className="backdrop-blur-md bg-black/50 border-b border-white/10">
-        <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+        
+        <div className="max-w-7xl mx-auto px-4 md:px-6 h-20 flex items-center justify-between">
 
           {/* Logo */}
-          <div className="flex items-center gap-2 cursor-pointer">
+          <div className="flex items-center gap-2 cursor-pointer shrink-0">
             <h1 className="text-white text-2xl font-bold">EDAM</h1>
           </div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex gap-10 text-sm text-gray-300">
+          <nav className="hidden md:flex gap-8 text-sm text-gray-300">
             <Link href="/" className="hover:text-white transition">Home</Link>
             <Link href="/about" className="hover:text-white transition">About</Link>
             <Link href="/services" className="hover:text-white transition">Services</Link>
@@ -29,41 +30,45 @@ export default function Navbar() {
           </nav>
 
           {/* Right Side */}
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2 md:gap-3">
 
-            {/* Facebook */}
-            <a
-              href="https://facebook.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center justify-center bg-white/10 hover:bg-blue-600 text-white p-3 rounded-full transition-all duration-300"
-            >
-              <FaFacebookF size={16} />
-            </a>
+            {/* Social Icons (hidden on very small screens) */}
+            <div className="hidden sm:flex items-center gap-2">
 
-            {/* Instagram */}
-            <a
-              href="https://instagram.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center justify-center bg-white/10 hover:bg-pink-500 text-white p-3 rounded-full transition-all duration-300"
-            >
-              <FaInstagram size={16} />
-            </a>
+              {/* Facebook */}
+              <a
+                href="https://facebook.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center bg-white/10 hover:bg-blue-600 text-white p-2.5 rounded-full transition-all duration-300 hover:scale-110"
+              >
+                <FaFacebookF size={14} />
+              </a>
 
-            {/* WhatsApp */}
+              {/* Instagram */}
+              <a
+                href="https://instagram.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center bg-white/10 hover:bg-pink-500 text-white p-2.5 rounded-full transition-all duration-300 hover:scale-110"
+              >
+                <FaInstagram size={14} />
+              </a>
+            </div>
+
+            {/* WhatsApp (always visible) */}
             <a
               href="https://wa.me/919999999999"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center justify-center bg-white/10 hover:bg-[#1ebe5d] text-white p-3 rounded-full transition-all duration-300"
+              className="flex items-center justify-center bg-white/10 hover:bg-[#1ebe5d] text-white p-2.5 md:p-3 rounded-full transition-all duration-300 hover:scale-110 shrink-0"
             >
-              <FaWhatsapp size={18} />
+              <FaWhatsapp size={16} />
             </a>
 
             {/* Mobile Menu Button */}
             <button
-              className="md:hidden text-white"
+              className="md:hidden text-white shrink-0"
               onClick={() => setIsOpen(!isOpen)}
             >
               {isOpen ? (
@@ -79,12 +84,39 @@ export default function Navbar() {
         {/* Mobile Menu */}
         {isOpen && (
           <div className="md:hidden bg-black/95 backdrop-blur-md px-6 pb-6 pt-4 space-y-4 text-gray-300 text-sm">
-            <Link href="/" onClick={() => setIsOpen(false)} className="block hover:text-white">Home</Link>
-            <Link href="/about" onClick={() => setIsOpen(false)} className="block hover:text-white">About</Link>
-            <Link href="/services" onClick={() => setIsOpen(false)} className="block hover:text-white">Services</Link>
-            <Link href="/#" onClick={() => setIsOpen(false)} className="block hover:text-white">Projects</Link>
-            <Link href="/#" onClick={() => setIsOpen(false)} className="block hover:text-white">Blog</Link>
-            <Link href="/contact" onClick={() => setIsOpen(false)} className="block hover:text-white">Contact</Link>
+
+            <Link href="/" onClick={() => setIsOpen(false)} className="block hover:text-white">
+              Home
+            </Link>
+            <Link href="/about" onClick={() => setIsOpen(false)} className="block hover:text-white">
+              About
+            </Link>
+            <Link href="/services" onClick={() => setIsOpen(false)} className="block hover:text-white">
+              Services
+            </Link>
+            <Link href="/#" onClick={() => setIsOpen(false)} className="block hover:text-white">
+              Projects
+            </Link>
+            <Link href="/#" onClick={() => setIsOpen(false)} className="block hover:text-white">
+              Blog
+            </Link>
+            <Link href="/contact" onClick={() => setIsOpen(false)} className="block hover:text-white">
+              Contact
+            </Link>
+
+            {/* Mobile Social Icons */}
+            <div className="flex gap-4 pt-4">
+              <a href="https://facebook.com" target="_blank" className="text-white">
+                <FaFacebookF size={18} />
+              </a>
+              <a href="https://instagram.com" target="_blank" className="text-white">
+                <FaInstagram size={18} />
+              </a>
+              <a href="https://wa.me/919999999999" target="_blank" className="text-white">
+                <FaWhatsapp size={18} />
+              </a>
+            </div>
+
           </div>
         )}
       </div>

@@ -30,7 +30,7 @@ export default function WhoAreWe() {
 </div>
           {/* 2x2 image grid */}
           <div className="grid grid-cols-2 gap-4 w-full">
-            {["/who-1.jpg", "/who-2.jpg", "/who-3.jpg", "/who-4.jpg"].map((src, i) => (
+            {["/who1.jpg", "/who2.jpg", "/who3.jpg", "/who4.jpg"].map((src, i) => (
               <motion.div
                 key={src}
                 variants={i % 2 === 0 ? downVariant : upVariant}

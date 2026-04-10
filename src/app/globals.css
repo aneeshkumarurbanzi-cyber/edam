@@ -12,11 +12,24 @@
   --font-mono: var(--font-geist-mono);
 }
 
+/* Dark mode */
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
   }
+}
+
+/* 🔥 IMPORTANT FIXES */
+html,
+body {
+  overflow-x: hidden;   /* ✅ fixes horizontal scroll */
+  max-width: 100%;      /* ✅ prevents width overflow */
+}
+
+/* Optional: smoother scrolling */
+html {
+  scroll-behavior: smooth;
 }
 
 body {
